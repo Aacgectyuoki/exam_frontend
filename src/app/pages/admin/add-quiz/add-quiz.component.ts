@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-quiz.component.css'],
 })
 export class AddQuizComponent implements OnInit {
-  categories = [];
+  categories: any[] = [];
 
   quizData = {
     title: '',

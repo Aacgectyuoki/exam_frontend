@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
@@ -10,9 +12,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-quiz-questions.component.css'],
 })
 export class ViewQuizQuestionsComponent implements OnInit {
-  qId;
-  qTitle;
-  questions = [];
+  qId: any;
+  qTitle: any;
+  questions: any = [];
+
 
   constructor(
     private _route: ActivatedRoute,
@@ -21,8 +24,8 @@ export class ViewQuizQuestionsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.qId = this._route.snapshot.params.qid;
-    this.qTitle = this._route.snapshot.params.title;
+    this.qId = this._route.snapshot.params['qid'];
+    this.qTitle = this._route.snapshot.params['title'];
     this._question.getQuestionsOfQuiz(this.qId).subscribe(
       (data: any) => {
         console.log(data);
@@ -35,7 +38,7 @@ export class ViewQuizQuestionsComponent implements OnInit {
   }
 
   //delete quesion
-  deleteQuestion(qid) {
+  deleteQuestion(qid: any) {
     Swal.fire({
       icon: 'info',
       showCancelButton: true,
@@ -49,7 +52,7 @@ export class ViewQuizQuestionsComponent implements OnInit {
             this._snak.open('Question Deleted ', '', {
               duration: 3000,
             });
-            this.questions = this.questions.filter((q) => q.quesId != qid);
+            this.questions = this.questions.filter((q: { quesId: any; }) => q.quesId != qid);
           },
 
           (error) => {

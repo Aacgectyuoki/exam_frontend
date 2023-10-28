@@ -7,7 +7,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  user = null;
+  user: any = {};
   constructor(private login: LoginService) {}
 
   ngOnInit(): void {

@@ -8,20 +8,20 @@ import baseUrl from './helper';
 export class QuestionService {
   constructor(private _http: HttpClient) {}
 
-  public getQuestionsOfQuiz(qid) {
+  public getQuestionsOfQuiz(qid: any) {
     return this._http.get(`${baseUrl}/question/quiz/all/${qid}`);
   }
 
-  public getQuestionsOfQuizForTest(qid) {
+  public getQuestionsOfQuizForTest(qid: any) {
     return this._http.get(`${baseUrl}/question/quiz/${qid}`);
   }
 
   //add question
-  public addQuestion(question) {
+  public addQuestion(question: { quiz: {}; content: string; option1: string; option2: string; option3: string; option4: string; answer: string; }) {
     return this._http.post(`${baseUrl}/question/`, question);
   }
   //delete question
-  public deleteQuestion(questionId) {
+  public deleteQuestion(questionId: any) {
     return this._http.delete(`${baseUrl}/question/${questionId}`);
   }
 }

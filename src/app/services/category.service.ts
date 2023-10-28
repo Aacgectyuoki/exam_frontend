@@ -13,7 +13,7 @@ export class CategoryService {
   }
 
   //add new category
-  public addCategory(category) {
+  public addCategory(category: { title: string; description: string; }) {
     return this._http.post(`${baseUrl}/category/`, category);
   }
 }

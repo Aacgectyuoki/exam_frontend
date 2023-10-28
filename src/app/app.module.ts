@@ -86,6 +86,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CKEditorModule,
     MatProgressSpinnerModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-categories.component.css'],
 })
 export class ViewCategoriesComponent implements OnInit {
-  categories = [];
+  categories: any = [];
 
   constructor(private _category: CategoryService) {}
 

@@ -23,7 +23,7 @@ export class LoginService {
   }
 
   //login user: set token in localStorage
-  public loginUser(token) {
+  public loginUser(token: string) {
     localStorage.setItem('token', token);
 
     return true;
@@ -52,7 +52,7 @@ export class LoginService {
   }
 
   //set userDetail
-  public setUser(user) {
+  public setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }
 

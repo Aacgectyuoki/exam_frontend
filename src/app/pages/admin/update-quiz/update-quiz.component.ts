@@ -18,11 +18,11 @@ export class UpdateQuizComponent implements OnInit {
   ) {}
 
   qId = 0;
-  quiz;
-  categories;
+  quiz: any;
+  categories: any;
 
   ngOnInit(): void {
-    this.qId = this._route.snapshot.params.qid;
+    this.qId = this._route.snapshot.params['qid'];
     // alert(this.qId);
     this._quiz.getQuiz(this.qId).subscribe(
       (data: any) => {
