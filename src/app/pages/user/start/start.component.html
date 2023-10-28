@@ -28,7 +28,7 @@
                 <input
                   type="radio"
                   [value]="q.option1"
-                  [name]="i"
+                  [name]="'radioGroup' + i"
                   [(ngModel)]="q.givenAnswer"
                 />{{ q.option1 }}
               </div>
@@ -36,7 +36,7 @@
                 <input
                   type="radio"
                   [value]="q.option2"
-                  [name]="i"
+                  [name]="'radioGroup' + i"
                   [(ngModel)]="q.givenAnswer"
                 />{{ q.option2 }}
               </div>
@@ -47,7 +47,7 @@
                 <input
                   type="radio"
                   [value]="q.option3"
-                  [name]="i"
+                  [name]="'radioGroup' + i"
                   [(ngModel)]="q.givenAnswer"
                 />{{ q.option3 }}
               </div>
@@ -55,7 +55,7 @@
                 <input
                   type="radio"
                   [value]="q.option4"
-                  [name]="i"
+                  [name]="'radioGroup' + i"
                   [(ngModel)]="q.givenAnswer"
                 />{{ q.option4 }}
               </div>

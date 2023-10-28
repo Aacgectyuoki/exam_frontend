@@ -1,0 +1,30 @@
+.admin-panel-title {
+    white-space: nowrap;
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #333; /* Change the text color to your preference */
+    text-align: center; /* Center the text */
+    text-transform: uppercase; /* Uppercase the text */
+    letter-spacing: 2px; /* Adjust letter spacing */
+    margin: 20px 0; /* Add spacing around the title */
+    max-width: 95%;
+  }
+
+
+  @media (max-width: 1200px) {
+    .admin-panel-title {
+      font-size: 2rem; /* Adjust font size for screens up to 1200px wide */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .admin-panel-title {
+      font-size: 1.8rem; /* Adjust font size for screens up to 992px wide */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-panel-title {
+      font-size: 1.5rem; /* Adjust font size for screens up to 768px wide */
+    }
+  }

@@ -13,28 +13,28 @@ export class QuizService {
   }
 
   //add quiz
-  public addQuiz(quiz) {
+  public addQuiz(quiz: { title: string; description: string; maxMarks: string; numberOfQuestions: string; active: boolean; category: { cid: string; }; }) {
     return this._http.post(`${baseUrl}/quiz/`, quiz);
   }
 
   //delete quiz
-  public deleteQuiz(qId) {
+  public deleteQuiz(qId: any) {
     return this._http.delete(`${baseUrl}/quiz/${qId}`);
   }
 
   //get the single quiz
 
-  public getQuiz(qId) {
+  public getQuiz(qId: number) {
     return this._http.get(`${baseUrl}/quiz/${qId}`);
   }
 
   //update quiz
-  public updateQuiz(quiz) {
+  public updateQuiz(quiz: any) {
     return this._http.put(`${baseUrl}/quiz/`, quiz);
   }
 
   //get quizzes of category
-  public getQuizzesOfCategory(cid) {
+  public getQuizzesOfCategory(cid: any) {
     return this._http.get(`${baseUrl}/quiz/category/${cid}`);
   }
   //qet active quizzes
@@ -43,7 +43,7 @@ export class QuizService {
   }
 
   //get active quizzes of category
-  public getActiveQuizzesOfCategory(cid) {
+  public getActiveQuizzesOfCategory(cid: any) {
     return this._http.get(`${baseUrl}/quiz/category/active/${cid}`);
   }
 }

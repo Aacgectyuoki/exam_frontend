@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  categories;
+  categories: any;
   constructor(private _cat: CategoryService, private _snack: MatSnackBar) {}
 
   ngOnInit(): void {

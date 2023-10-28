@@ -1,6 +1,11 @@
 <mat-card>
-  <mat-action-list>
-    <div mat-subheader>Menu</div>
+  <div mat-subheader>Menu
+  <button (click)="isMenuVisible = !isMenuVisible" mat-button color="accent">
+    <mat-icon mat-list-icon>visibility</mat-icon>
+    Open/Close
+  </button></div>
+
+  <mat-action-list *ngIf="isMenuVisible">
     <button routerLink="/admin" mat-list-item>
       <mat-icon mat-list-icon>home</mat-icon> Home
     </button>
@@ -24,3 +29,4 @@
     </button>
   </mat-action-list>
 </mat-card>
+<br>

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  // by default the menu is open, but it will close if button is clicked
+  isMenuVisible = true;
 
   constructor() { }
 

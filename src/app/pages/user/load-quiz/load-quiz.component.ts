@@ -8,13 +8,13 @@ import { QuizService } from 'src/app/services/quiz.service';
   styleUrls: ['./load-quiz.component.css'],
 })
 export class LoadQuizComponent implements OnInit {
-  catId;
-  quizzes;
+  catId!: number;
+  quizzes: any;
   constructor(private _route: ActivatedRoute, private _quiz: QuizService) {}
 
   ngOnInit(): void {
     this._route.params.subscribe((params) => {
-      this.catId = params.catId;
+      this.catId = params['catId'];
       if (this.catId == 0) {
         console.log('Load all the quiz');
 

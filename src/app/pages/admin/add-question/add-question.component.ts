@@ -5,6 +5,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+
 @Component({
   selector: 'app-add-question',
   templateUrl: './add-question.component.html',
@@ -12,10 +13,12 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 export class AddQuestionComponent implements OnInit {
   public Editor = ClassicEditor;
-  qId;
-  qTitle;
+  qId: any;
+  qTitle: any;
   question = {
-    quiz: {},
+    quiz: {
+      qId: '',
+    },
     content: '',
     option1: '',
     option2: '',
@@ -30,8 +33,8 @@ export class AddQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.qId = this._route.snapshot.params.qid;
-    this.qTitle = this._route.snapshot.params.title;
+    this.qId = this._route.snapshot.params['qid'];
+    this.qTitle = this._route.snapshot.params['title'];
     this.question.quiz['qId'] = this.qId;
   }
 

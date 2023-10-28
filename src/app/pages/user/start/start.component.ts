@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./start.component.css'],
 })
 export class StartComponent implements OnInit {
-  qid;
-  questions;
+  qid: any;
+  questions!: any[];
 
   marksGot = 0;
   correctAnswers = 0;
@@ -30,7 +30,7 @@ export class StartComponent implements OnInit {
 
   ngOnInit(): void {
     this.preventBackButton();
-    this.qid = this._route.snapshot.params.qid;
+    this.qid = this._route.snapshot.params['qid'];
     console.log(this.qid);
     this.loadQuestions();
   }
@@ -41,7 +41,7 @@ export class StartComponent implements OnInit {
 
         this.timer = this.questions.length * 2 * 60;
 
-        this.questions.forEach((q) => {
+        this.questions.forEach((q: { [x: string]: string; }) => {
           q['givenAnswer'] = '';
         });
 
@@ -57,9 +57,9 @@ export class StartComponent implements OnInit {
   }
 
   preventBackButton() {
-    history.pushState(null, null, location.href);
+    history.pushState(null, '', location.href);
     this.locationSt.onPopState(() => {
-      history.pushState(null, null, location.href);
+      history.pushState(null, '', location.href);
     });
   }
 
@@ -98,7 +98,7 @@ export class StartComponent implements OnInit {
     //calculation
     this.isSubmit = true;
 
-    this.questions.forEach((q) => {
+    this.questions.forEach((q: { givenAnswer: string; answer: any; }) => {
       if (q.givenAnswer == q.answer) {
         this.correctAnswers++;
         let marksSingle =
