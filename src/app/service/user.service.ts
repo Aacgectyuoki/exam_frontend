@@ -16,4 +16,8 @@ export class UserService {
     return this.http.post(`${baseUrl}/user/`, user)
   }
 
+    // Update user profile
+    public updateUserProfile(userId: number, updatedUser: any) {
+      return this.http.put(`${baseUrl}/user/${userId}`, updatedUser);
+    }
 }

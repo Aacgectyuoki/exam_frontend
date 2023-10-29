@@ -41,6 +41,9 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UpdateProfileComponent } from './pages/update profile/update-profile/update-profile.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -66,6 +69,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     LoadQuizComponent,
     InstructionsComponent,
     StartComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +89,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSelectModule,
     CKEditorModule,
     MatProgressSpinnerModule,
+    MatDialogModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [authInterceptorProviders],

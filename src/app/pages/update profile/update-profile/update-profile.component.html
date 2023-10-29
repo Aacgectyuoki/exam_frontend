@@ -1,0 +1,19 @@
+<div>
+    <h2>Update Profile</h2>
+    <form (submit)="updateProfile()">
+      <mat-form-field class="form-group">
+        <input matInput placeholder="First Name" id="firstName" name="firstName" [(ngModel)]="user.firstName" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Last Name" id="lastName" name="lastName" [(ngModel)]="user.lastName" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Username" id="username" name="username" [(ngModel)]="user.username" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <input matInput placeholder="Phone" id="phone" name="phone" [(ngModel)]="user.phone" required>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Save</button>
+    </form>
+  </div>
+  
